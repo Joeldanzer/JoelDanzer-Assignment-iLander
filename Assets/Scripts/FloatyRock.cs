@@ -23,20 +23,17 @@ public class FloatyRock : ObjectProperties
     }
     public override void UpdateObject()
     {
-        // Not the most pretty code
+        // Not the most pretty code & it kinda works, has problems moving if the either x or y is somewhat not alligned
         m_dir = m_targetPosition.position - transform.position;
 
         if (Vector3.Distance(transform.position, m_targetPosition.position) < 0.5f)
         {
-            //m_dir *= -1.0f;
-
             if(m_targetPosition == m_p1)
                 m_targetPosition = m_p2;   
             else if (m_targetPosition == m_p2)
                 m_targetPosition = m_p1;
         }
  
-
         m_velocity.y += m_speed * m_dir.y * Time.deltaTime;
         m_velocity.x += m_speed * m_dir.x * Time.deltaTime;
 

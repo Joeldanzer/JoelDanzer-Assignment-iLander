@@ -11,9 +11,7 @@ static public class DefinedValues
 public abstract class ObjectProperties : MonoBehaviour
 {
     protected Vector2 m_velocity;
-
-    public    Vector2 m_desiredVelocity;
-    public    Vector2 m_maxVelocity;
+    protected Vector2 m_maxVelocity;
 
     [SerializeField]
     protected float m_weight;
@@ -28,6 +26,10 @@ public abstract class ObjectProperties : MonoBehaviour
     public Vector2 Velocity {
         get { return m_velocity;  }
         set { m_velocity = value; } 
+    }
+    public Vector2 MaxVelocity
+    {
+        get { return m_maxVelocity; }
     }
     public float Weight
     {

@@ -1,1 +1,38 @@
+Metal Lung, an iLander gamer for the Final C# assignment. 
+
+In Metal Lung you control a submarine that's submerged in the pitch black depth of the sea 
+where your only source of light is a spotlight attached to the submarine, you'll have to slowly 
+navigate through a obstacle course while keeping the ships hull over 0%. Navigating through the course
+will not an easy task as it is hard to control to ship under such high water pressure & with the added 
+weight of the submarine you'll haft to plan before hand to avoid crashing in to obsatcles
+as much as possible. 
+
+To start the game you open up the Main Menu scene in Unity and play from there. There should be no need of 
+additional packages? Unless you do need some I used TextMeshPro & New Input Manager system
+
+You move the ship by using standard Arrow controls & the lightsource with the keys 'Z'(up) and 'X'(down). 
+To pause the game you press 'P'.
+
+The first thing I wanted to achieve with the gameworld itself is that I have complete controll over most
+of the things in the actual gameworld so I decided to make my own Update system for all the objects in the 
+world that interacts with the player this meant that I can make my own little "physics" system that affects 
+every object in the world how I want it to but also makes it easier to for example pause 
+the game(not having to set Time.timeScale = 0) and what objects are close enough to the camera to be "active".
+
+Another system that I spend majority of time on this project was the lighting system using Unity shaders. I realised early
+on my development that Unity2D does not support 2D lighting and shadows by default(realised later that URP addon
+actually gives you proper 2D lighting with shadows but was so far in it that decided to keep going) so I decided to make my 
+own and it was definetly an experience. The lighting & shadows work by first checking with objects actually want to cast
+a shadow by looking for "Shadow Layer" on objects, I then grab the objects Colliders(only supporting Circle & Box) & stores
+this information in the ShadowMapBuffer class & send this information to the shader that then does some line intersection 
+calculation to detect shadows that I then copy to a Textured2D to  be used when rendering the PointLights & Spotlights 
+to easily detect if the current pixel is a shadow or not.
+
+My inspiration for this project was kinda the vibe of Iron Lung but then I later realised they are nothing 
+a like except the limited vision and submarine.
+
+Unity version: 2022.3.8f1
+
+
+
 

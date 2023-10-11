@@ -19,10 +19,8 @@ public class ObjectHandler : MonoBehaviour
     {
         // Fetch all the ObjectProperties in the scene
         m_objects = m_mainScene.GetComponentsInChildren<ObjectProperties>();
-        // Instantiate all these objects
         for (int i = 0; i < m_objects.Length; i++)
         {
-            //Debug.Log("INSTNATIATING");
             m_objects[i].Instantiate();
 
         }
@@ -44,7 +42,7 @@ public class ObjectHandler : MonoBehaviour
                     { // Simple force physics
                         
                         // Clamp so the object cannot reach more than it's max velocity
-                        obj.Velocity = ClampVector2(obj.Velocity, -obj.m_maxVelocity, obj.m_maxVelocity);
+                        obj.Velocity = ClampVector2(obj.Velocity, -obj.MaxVelocity, obj.MaxVelocity);
                         float frictionDir = obj.Velocity.x > 0.0f ? 1.0f : -1.0f;
 
                         // Multiply together the objects weight with the worlds friciton & gravity

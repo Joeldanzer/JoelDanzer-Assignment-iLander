@@ -63,6 +63,8 @@ Shader "Hidden/ShadowMapping2D"
 
             // Line to circle intersection detection taken from https://stackoverflow.com/a/1084899
             int LineCircleIntersection(CircleObject circle, float2 startPosition, float2 endPosition){                
+                // If this line intersects 2 points on the circle, the pixel is behind the object
+                // and is a shadow
                 int intersections = 0;
             
                 float2 d = endPosition   - startPosition;
@@ -87,15 +89,14 @@ Shader "Hidden/ShadowMapping2D"
             
                    if(t1 >= 0.0 && t1 <= 1.0)
                       intersections++;
-                      //return true;
                    
                    if(t2 >= 0.0 && t2 <= 1.0)
                       intersections++;
-                      //return true; 
                 }
                 return intersections;
             }
 
+            // Forgot to copy paste the link for this solution here :(
             int LineToLineIntersection(float2 aLineStart, float2 aLineEnd, float2 bLineStart, float2 bLineEnd){
                 float2 s1, s2;
                 s1 = aLineEnd - aLineStart;
@@ -132,6 +133,7 @@ Shader "Hidden/ShadowMapping2D"
                 for(int i = 0; i < BoxObjectCount; i++){
                     int intersections = 0;
                     for(int j = 0; j < 4; j++ ) {
+                       // if pixel has intersected with object 2 times it's behind it
                        intersections += LineToLineIntersection(Spotlights[0].m_position.xy, v.uv.xy, BoxObjects[i].m_lines[j].xy, BoxObjects[i].m_lines[j].zw);
                        if(intersections == 2)
                           return fixed4(0.0, 0.0, 0.0, 1.0); 

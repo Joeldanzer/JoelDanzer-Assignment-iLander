@@ -3,7 +3,7 @@ Shader "Hidden/SpotlightShader2D"
     Properties
     {
         _MainTex ("Texture", 2D) = "white" {}
-        _Screen("Screen", vector) = (1920.0, 1080.0, 0.0, 0.0)
+        _Screen("Screen", vector) = (1920.0, 1080.0, 0.0, 0.0) // not Vector2??
     }
     SubShader
     {
