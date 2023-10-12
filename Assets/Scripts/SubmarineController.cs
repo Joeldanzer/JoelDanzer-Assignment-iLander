@@ -15,9 +15,9 @@ public class SubmarineController : ObjectProperties
     private Transform m_lampTransform, m_startPositon, m_cameraTransform;
 
     private float m_currentLampRotation = 0.0f;
-    private float m_lampDir = 0.0f;
-    private float m_yDir    = 0.0f;
-    private float m_xDir    = 0.0f;
+    private float m_lampDir             = 0.0f;
+    private float m_yDir                = 0.0f;
+    private float m_xDir                = 0.0f;
 
     [SerializeField]
     private float m_hull, m_defaultHullDamage, m_invulnerableTimer;
@@ -53,8 +53,6 @@ public class SubmarineController : ObjectProperties
         m_lampTransform.rotation  = Quaternion.Euler(new Vector3(0.0f, 0.0f, m_currentLampRotation));
 
         m_currentInvulTimer -= Time.deltaTime;
-        
-
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -109,10 +107,12 @@ public class SubmarineController : ObjectProperties
     public void MoveYAxis(InputAction.CallbackContext context)
     {
         m_yDir = context.canceled ? 0.0f : context.ReadValue<float>();
+        Debug.Log(m_yDir);
     }
     public void MoveXAxis(InputAction.CallbackContext context)
     {
         m_xDir = context.canceled ? 0.0f : context.ReadValue<float>();
+        Debug.Log(m_xDir);
     }
     public void RotateLamp(InputAction.CallbackContext context)
     {

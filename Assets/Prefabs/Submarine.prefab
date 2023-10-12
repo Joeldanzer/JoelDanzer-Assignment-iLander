@@ -149,8 +149,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bf08f31b8ca66f438203f29022a1769, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_desiredVelocity: {x: 0, y: 0}
-  m_maxVelocity: {x: 0, y: 0}
+  m_maxVelocity: {x: 1.5, y: 1.5}
   m_weight: 0
   m_hullText: {fileID: 0}
   m_speed: 10
@@ -158,10 +157,10 @@ MonoBehaviour:
   m_lampMaxAngle: 0
   m_lampTransform: {fileID: 5251087351353789145}
   m_startPositon: {fileID: 0}
+  m_cameraTransform: {fileID: 0}
   m_hull: 0
   m_defaultHullDamage: 0
   m_invulnerableTimer: 0
-  m_deathTimer: 0
 --- !u!114 &6639887567664824830
 MonoBehaviour:
   m_ObjectHideFlags: 0

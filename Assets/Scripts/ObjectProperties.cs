@@ -10,12 +10,10 @@ static public class DefinedValues
 }
 public abstract class ObjectProperties : MonoBehaviour
 {
+    [SerializeField] protected Vector2 m_maxVelocity;
+    [SerializeField] protected float m_weight;
+
     protected Vector2 m_velocity;
-    protected Vector2 m_maxVelocity;
-
-    [SerializeField]
-    protected float m_weight;
-
     protected bool m_active;
 
     public bool Active

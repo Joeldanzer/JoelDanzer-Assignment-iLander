@@ -6108,7 +6108,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2406300107332782203, guid: 62e7c2ac85ddde94cba1a280892ce720, type: 3}
       propertyPath: m_speed
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2406300107332782203, guid: 62e7c2ac85ddde94cba1a280892ce720, type: 3}
       propertyPath: m_weight
@@ -6132,11 +6132,11 @@ PrefabInstance:
       objectReference: {fileID: 1160085366}
     - target: {fileID: 2406300107332782203, guid: 62e7c2ac85ddde94cba1a280892ce720, type: 3}
       propertyPath: m_maxVelocity.x
-      value: 1
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 2406300107332782203, guid: 62e7c2ac85ddde94cba1a280892ce720, type: 3}
       propertyPath: m_maxVelocity.y
-      value: 1
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 2406300107332782203, guid: 62e7c2ac85ddde94cba1a280892ce720, type: 3}
       propertyPath: m_cameraTransform
